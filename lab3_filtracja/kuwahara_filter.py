@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 
 
-img=cv2.imread('./Images/lenna_noise.bmp')
+img=cv2.imread('./Images/whitepixels.png')
 
 
 def kuwahara_filter(L,imgl):
@@ -18,9 +18,9 @@ def kuwahara_filter(L,imgl):
 
 
 
-    for i in range(0,rows-L-1):
+    for i in range(1,rows-L-1):
 
-        for j in range(0,columns-L-1):
+        for j in range(1,columns-L-1):
             
             window=imgl[i:i+width,j:j+width]
             rows_w=window.shape[0]

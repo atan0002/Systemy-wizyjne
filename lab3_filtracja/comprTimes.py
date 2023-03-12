@@ -13,7 +13,8 @@ columns=img.shape[1]
 third_j=0
 
 
-for i in range(rows):
+for i in range(0,rows,3):
+    third_j=0
     for j in range(columns):
         
         if ((j+1)-third_j)==3:
@@ -22,6 +23,8 @@ for i in range(rows):
             third_j=j+1
 
 column=1
+
+cv2.imwrite("./Images/whitepixels.png", img_white)
 
 
 
