@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 
 
-img=cv2.imread('./Images/whitepixels.png')
+img=cv2.imread('./Images/whitepixels.png',cv2.IMREAD_GRAYSCALE)
 
 
 def kuwahara_filter(L,imgl):
@@ -28,21 +28,21 @@ def kuwahara_filter(L,imgl):
             region1=window[0:region_width,0:region_width]
             reg1mean,reg1stddev=cv2.meanStdDev(region1)
        
-            stat['mean'].append(reg1mean[0][0])
-            stat['deviat'].append(reg1stddev[0][0])
+            stat['mean'].append(reg1mean)
+            stat['deviat'].append(reg1stddev)
            
             region2=window[0:region_width,region_width-1:columns_w]
             reg2mean,reg2stddev=cv2.meanStdDev(region2)
-            stat['mean'].append(reg2mean[0][0])
-            stat['deviat'].append(reg2stddev[0][0])
+            stat['mean'].append(reg2mean)
+            stat['deviat'].append(reg2stddev)
             region3=window[region_width-1:rows_w,region_width-1:columns_w]
             reg3mean,reg3stddev=cv2.meanStdDev(region3)
-            stat['mean'].append(reg3mean[0][0])
-            stat['deviat'].append(reg3stddev[0][0])
+            stat['mean'].append(reg3mean)
+            stat['deviat'].append(reg3stddev)
             region4=window[region_width-1:rows_w,0:region_width]
             reg4mean,reg4stddev=cv2.meanStdDev(region4)
-            stat['mean'].append(reg4mean[0][0])
-            stat['deviat'].append(reg4stddev[0][0])
+            stat['mean'].append(reg4mean)
+            stat['deviat'].append(reg4stddev)
 
 
             min_dev_ind=stat['deviat'].index(min(stat['deviat']))
