@@ -24,7 +24,7 @@ for line in lines:
     cv2.line(img,(x1,y1),(x2,y2),(0,0,255),2)
 
 circles = cv2.HoughCircles(img2,cv2.HOUGH_GRADIENT,1,20,
-                            param1=50,param2=30,minRadius=10,maxRadius=0)
+                            param1=70,param2=40,minRadius=10,maxRadius=0)
 
 
 circles = np.uint16(np.around(circles))
